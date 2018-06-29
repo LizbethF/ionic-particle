@@ -3,22 +3,23 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>How's My Puppy?</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding> 
+<ion-content padding>
   <div *ngIf="!particle.token">
       Please login and select a device. <br />
       <button ion-button (click)="login()">Login</button>
   </div>
   <div *ngIf="particle.token && particle.device">
-      <h5>Lizbeth Frausto's app </h5>
+      <h5 style = "color: blue;">For puppy lovers </h5>
       <p>
-        This app demonstrates how to access a Particle.io device to display its state, read events, and call functions.
+      <img src="/assets/dogpaw.jpg" />
       </p>
       <!-- You can display different device states by checking particle.device -->
       <p *ngIf="!particle.device || !particle.device.connected">{{particle.device.name}} is offline</p>
       <p *ngIf="particle.device && particle.device.connected">You are currently viewing {{particle.device.name}}</p>
+
  </div>
 </ion-content>
